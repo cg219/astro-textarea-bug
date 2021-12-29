@@ -1,0 +1,17 @@
+---
+const {
+    label,
+    fieldType,
+    required = false
+} = Astro.props;
+
+const isTextarea = fieldType == 'textarea';
+
+console.log(Astro.props)
+---
+
+<div class='input'>
+    <label htmlFor={label}>{label}</label>
+    {isTextarea && <textarea cols="30" rows="30" id ={label} name={label}></p>}
+    {!isTextarea && <input id={label} required={required} />}
+</div>
